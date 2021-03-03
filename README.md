@@ -12,9 +12,3 @@ The background image collected from -> https://www.freepik.com/
 Full Project Link : https://github.com/Saadman-Galib/Project--01-Space-Invaders-Game-with-Pygame
 
 Author: Md. Saadman Galib Rabbi
-
-Youtube: https://rb.gy/e6piqa
-
-Facebook: https://rb.gy/9ckb8m
-
-Instagram: https://rb.gy/xluody
