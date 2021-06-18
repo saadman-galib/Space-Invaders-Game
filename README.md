@@ -4,7 +4,7 @@ This is my first pygame project => Space Invaders Game
 I have made the project in python 3 with pygame
 
 <h3>libray installation</h3>
-<h4>For windows</h4>
+####For windows####
 
 > pip install pygame
 
