@@ -7,7 +7,7 @@ I have made the project in python 3 with pygame
 <h4>For windows</h4>
 pip install pygame
 
----
+___
 
 The game images collected from -> https://www.flaticon.com<br>
 The background image collected from -> https://www.freepik.com/
