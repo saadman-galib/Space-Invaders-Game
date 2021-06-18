@@ -6,6 +6,7 @@ I have made the project in python 3 with pygame
 <h3>libray installation</h3>
 <h4>For windows</h4>
 pip install pygame
+
 ---
 
 The game images collected from -> https://www.flaticon.com<br>
