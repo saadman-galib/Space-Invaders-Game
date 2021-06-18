@@ -5,7 +5,7 @@ I have made the project in python 3 with pygame
 
 <h3>libray installation</h3>
 
-## For windows
+#### For windows
 
 > pip install pygame
 
