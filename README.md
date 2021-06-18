@@ -9,7 +9,7 @@ I have made the project in python 3 with pygame
 
 ` pip install pygame `
 
-| |
+| hello|
 
 The game images collected from -> [Flaticon](https://www.flaticon.com "Flaticon")<br>
 The background image collected from -> [Freepik](https://www.freepik.com/ "Freepik")
