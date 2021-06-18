@@ -7,7 +7,7 @@ I have made the project in python 3 with pygame
 
 #### For windows
 
-> pip install pygame
+>> pip install pygame
 
 ___
 
