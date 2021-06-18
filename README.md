@@ -4,13 +4,13 @@ This is my first pygame project => Space Invaders Game
 I have made the project in python 3 with pygame
 
 <h3>libray installation</h3>
-#### For windows ####
+#### For windows
 
 > pip install pygame
 
 ___
 
-The game images collected from -> https://www.flaticon.com<br>
+The game images collected from -> [Flaticon](https://www.flaticon.com "Flaticon")<br>
 The background image collected from -> https://www.freepik.com/
 
 
