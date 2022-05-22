@@ -37,7 +37,7 @@ enemyX_change = []
 enemyY_change = []
 num_of_enemies = 6
 
-for i in range(num_of_enemies):
+for _ in range(num_of_enemies):
     enemyImg.append(pg.image.load("real enemy.png"))
     enemyX.append(rd.randint(0, 735)) # 335
     enemyY.append(rd.randint(50, 150)) # 2
@@ -69,7 +69,7 @@ textY = 10
 over_font = pg.font.Font('freesansbold.ttf', 64)
 
 def show_score(x, y):
-    score = font.render("Score :" + str(score_value), True, (255, 255, 255))
+    score = font.render(f"Score :{str(score_value)}", True, (255, 255, 255))
     screen.blit(score, (x, y))
 
 def game_over_text():
@@ -90,10 +90,7 @@ def fire_bullet(x, y):
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
     distance = mt.sqrt((mt.pow(enemyX-bulletX-28, 2)) + (mt.pow(enemyY-bulletY, 2)))
-    if distance < 27:
-        return True
-    else:
-        return False
+    return distance < 27
 
 
 # Game Loop
@@ -116,25 +113,22 @@ while running:
                 playerX_change = -5
             if event.key == pg.K_RIGHT:
                 playerX_change = 5
-            if event.key == pg.K_KP_ENTER:
-                if bullet_state is 'ready':
-                    # Get the current x cordinate of the spaceship
-                    bulletX = playerX
-                    fire_bullet(bulletX, bulletY)
-            if event.key == pg.K_SPACE:
-                if bullet_state is 'ready':
-                    # Get the current x cordinate of the spaceship
-                    bullet_sound = mixer.Sound("laser.wav")
-                    bullet_sound.set_volume(0.2)
-                    bullet_sound.play()
-                    bulletX = playerX
-                    fire_bullet(bulletX, bulletY)
-            if event.key == pg.KMOD_ALT or event.key == pg.K_F4:
+            if event.key == pg.K_KP_ENTER and bullet_state is 'ready':
+                # Get the current x cordinate of the spaceship
+                bulletX = playerX
+                fire_bullet(bulletX, bulletY)
+            if event.key == pg.K_SPACE and bullet_state is 'ready':
+                # Get the current x cordinate of the spaceship
+                bullet_sound = mixer.Sound("laser.wav")
+                bullet_sound.set_volume(0.2)
+                bullet_sound.play()
+                bulletX = playerX
+                fire_bullet(bulletX, bulletY)
+            if event.key in [pg.KMOD_ALT, pg.K_F4]:
                 running = False
 
-        if event.type == pg.KEYUP:
-            if event.key == pg.K_LEFT or event.key == pg.K_RIGHT:
-                playerX_change = 0
+        if event.type == pg.KEYUP and event.key in [pg.K_LEFT, pg.K_RIGHT]:
+            playerX_change = 0
 
 
     # Checking for boundaries of spaceship so it doesn't go out of bounds
@@ -165,9 +159,7 @@ while running:
             enemyX_change[i] = -2
             enemyY[i] += enemyY_change[i]
 
-        # Collision
-        collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
-        if collision:
+        if collision := isCollision(enemyX[i], enemyY[i], bulletX, bulletY):
             explosion_sound = mixer.Sound("explosion.wav")
             explosion_sound.set_volume(0.15)
             explosion_sound.play()
