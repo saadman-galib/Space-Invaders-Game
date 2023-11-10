@@ -11,7 +11,7 @@ pg.init()
 screen = pg.display.set_mode((800, 600))
 
 # Background
-background = pg.image.load('background.png ')
+background = pg.image.load('background.png')
 
 # Background Sound
 mixer.music.load('background.wav')
@@ -117,12 +117,12 @@ while running:
             if event.key == pg.K_RIGHT:
                 playerX_change = 5
             if event.key == pg.K_KP_ENTER:
-                if bullet_state is 'ready':
+                if bullet_state == 'ready':
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
             if event.key == pg.K_SPACE:
-                if bullet_state is 'ready':
+                if bullet_state == 'ready':
                     # Get the current x cordinate of the spaceship
                     bullet_sound = mixer.Sound("laser.wav")
                     bullet_sound.set_volume(0.2)
@@ -183,7 +183,7 @@ while running:
     if bulletY <= 0:
         bulletY = 480
         bullet_state = 'ready'
-    if bullet_state is 'fire':
+    if bullet_state == 'fire':
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
 
